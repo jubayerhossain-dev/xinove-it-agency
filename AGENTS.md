@@ -8,3 +8,6 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep the agency website as a single scrolling route because the user explicitly requested a one-page experience.
+- Use semantic CSS tokens for the XINOVE-inspired dark-teal, lime, and neutral visual system so all sections stay consistent.
