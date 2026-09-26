@@ -50,20 +50,20 @@ function Logo({ className = "h-9" }: { className?: string }) {
 function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-hero-foreground/10 bg-ink/80 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-white/90 backdrop-blur-xl">
       <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 lg:px-8">
-        <a href="#top" aria-label="Home"><Logo className="h-9 brightness-0 invert" /></a>
+        <a href="#top" aria-label="Home"><Logo className="h-9" /></a>
         <nav className="hidden items-center gap-9 md:flex">
-          {navLinks.map(([label, href]) => <a key={href} href={href} className="text-xs font-semibold uppercase tracking-[0.14em] text-hero-foreground/70 transition-colors hover:text-lime">{label}</a>)}
+          {navLinks.map(([label, href]) => <a key={href} href={href} className="text-xs font-semibold uppercase tracking-[0.14em] text-foreground/70 transition-colors hover:text-lime-dark">{label}</a>)}
         </nav>
-        <Button asChild className="hidden h-10 bg-lime px-5 text-xs font-bold uppercase tracking-[0.12em] text-ink shadow-none hover:bg-hero-foreground md:inline-flex">
+        <Button asChild className="hidden h-10 bg-lime px-5 text-xs font-bold uppercase tracking-[0.12em] text-ink shadow-none hover:bg-ink hover:text-hero-foreground md:inline-flex">
           <a href="#contact">Start a project <ArrowUpRight /></a>
         </Button>
-        <Button variant="ghost" size="icon" className="text-hero-foreground hover:bg-hero-foreground/10 hover:text-lime md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
+        <Button variant="ghost" size="icon" className="text-foreground hover:bg-foreground/10 hover:text-lime-dark md:hidden" onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"}>
           {open ? <X /> : <Menu />}
         </Button>
       </div>
-      {open && <nav className="border-t border-hero-foreground/10 bg-ink px-5 py-5 md:hidden">{navLinks.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)} className="block border-b border-hero-foreground/10 py-4 font-display text-2xl font-semibold text-hero-foreground">{label}</a>)}</nav>}
+      {open && <nav className="border-t border-border bg-white px-5 py-5 md:hidden">{navLinks.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)} className="block border-b border-border py-4 font-display text-2xl font-semibold text-foreground">{label}</a>)}</nav>}
     </header>
   );
 }
